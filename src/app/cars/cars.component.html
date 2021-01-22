@@ -1,3 +1,5 @@
 <div *ngFor="let c of cars">
   <app-car [car]="c" ></app-car>
+ <h4> <app-owner [owner]="c.owner"></app-owner> </h4>
 </div>
+
