@@ -1,0 +1,5 @@
+<div *ngFor="let c of cars">
+  <app-car [car]="c" ></app-car> - <a [routerLink]="[c.id]">Check owner</a>
+</div>
+
+<router-outlet></router-outlet>

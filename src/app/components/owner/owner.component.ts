@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IOwner} from '../interface/owner';
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,12 @@ export class OwnerComponent implements OnInit {
 
   @Input()
   owner: IOwner;
-  constructor() {
+
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe();
+
+
   }
 
   ngOnInit(): void {

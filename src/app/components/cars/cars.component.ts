@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {cars} from '../../db/data';
+import {cars} from '../db/data';
 import {ICars} from '../interface';
 
 @Component({
