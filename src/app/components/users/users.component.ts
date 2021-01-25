@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {User} from '../../models/User';
 import {Posts} from '../../models/Posts';
+import {UserService} from '../services/user.service';
+import {PostService} from '../services/post.service';
 
 
 @Component({
@@ -14,18 +15,13 @@ export class UsersComponent implements OnInit {
   posts: Posts[];
   userPost: Posts[];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private userService: UserService, private postService: PostService) {
   }
 
   ngOnInit(): void {
-    this
-      .httpClient
-      .get<User[]>('https://jsonplaceholder.typicode.com/users')
-      .subscribe(value => this.users = value);
-    this
-      .httpClient
-      .get<Posts[]>('https://jsonplaceholder.typicode.com/posts')
-      .subscribe(value => this.posts = value);
+    this.userService.getAllUsers().subscribe(value => this.users = value);
+    this.postService.getAllPosts().subscribe(value => this.posts = value);
+
   }
 
   getBubbleUser(user: User): void {
