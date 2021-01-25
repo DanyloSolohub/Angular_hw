@@ -1,5 +1,5 @@
-{{car.model}}
+<div>{{car.model}}
 {{car.color}}
 {{car.power}}
-{{car.year}}
-
+{{car.year}} -  <a [routerLink]="[car.id , 'owner']">Check owner</a>
+</div>

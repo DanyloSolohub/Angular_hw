@@ -21,7 +21,7 @@ import {HomeComponent} from './components/home/home.component';
     RouterModule.forRoot([{
       path: 'link/cars', component: CarsComponent, children: [
         {
-          path: ':id', component: OwnerComponent
+          path: ':id/owner', component: OwnerComponent
         }
       ]
     },
