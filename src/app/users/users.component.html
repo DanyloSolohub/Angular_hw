@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" (ngSubmit)="action()" >
+  <label>
+  <input type="text" placeholder="ім'я" [formControl]="name"  [name]="'name'">
+  <input type="number" placeholder="вік" [formControl]="age"  [name]="'age'">
+  <input type="email" placeholder="пошта" [formControl]="email"   [name]="'email'">
+  </label>
+  <button>Save</button>
+</form>
+
+<app-user *ngFor="let user of users" [user] = user>
+
+</app-user>
+
